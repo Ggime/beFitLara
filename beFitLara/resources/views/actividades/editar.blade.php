@@ -4,7 +4,7 @@
 
   <section class="iniciar">
     <div class="ingresar">
-        <form action="/actividades/editar/{{$actividad->id}}" method="post" enctype="multipart/form-data">
+        <form action="/actividades/editar/{{$actividad->id}}" method="post" id="ediat" enctype="multipart/form-data">
           {{ csrf_field() }}
         <!--@if (count($errors)>0)
           <div class="alert alert-danger">
@@ -20,6 +20,7 @@
           <div class="nombre">
             <label for="actividad">
               <input type="text" id="" name="actividad" placeholder="*Actividad" value="{{$actividad->actividad}}" >
+              <div class=""></div>
             </label>
             <!--<label for="">
               <input type="text" id="" name="responsable" placeholder="*Responsable">
@@ -43,6 +44,7 @@
                   @endif
                 @endforeach
                 </select>
+                <div class=""></div>
             </label>
           </div>
           <div class="mensajes">
@@ -63,6 +65,7 @@
                 @endif
               @endforeach
               </select>
+              <div class=""></div>
             </label>
             </div>
             <div class="mensajes">
@@ -72,10 +75,12 @@
             </div>
             <div class="nombre">
             <label for="direccion">
-          <input type="text" id="" name="direccion" placeholder="*Dirección" value="{{$actividad->direccion}}">
+              <input type="text" id="" name="direccion" placeholder="*Dirección" value="{{$actividad->direccion}}">
+              <div class=""></div>
             </label>
               <label for="dia">
                 <input type="text" id="" name="dia" placeholder="*Dias de clase" value="{{$actividad->dia}}">
+                <div class=""></div>
               </label>
             </div>
           <div class="mensajes">
@@ -87,9 +92,11 @@
           <div class="nombre">
             <label for="hora">
               <input type="text" id="" name="hora" placeholder="*Hora de inicio" value="{{$actividad->hora}}">
+              <div class=""></div>
             </label>
             <label for="duracion">
               <input type="text" id="" name="duracion" placeholder="*Duración en minutos" value="{{$actividad->duracion}}">
+              <div class=""></div>
             </label>
           </div>
           <div class="mensajes">
@@ -101,9 +108,11 @@
 
             <label for="precio">
               <input type="text" id="" name="precio" placeholder="*Precio" value="{{$actividad->precio}}">
+              <div class=""></div>
             </label>
             <label for="descripcion" >
                 <input type="text" id="" name="descripcion" placeholder="*Descripción" value="{{$actividad->descripcion}}">
+                <div class=""></div>
             </label>
           </div>
           </div>
@@ -113,17 +122,12 @@
                 <li>{{ $errors->has('descripcion')? $errors->first('descripcion') : ''}}</li>
              </ul>
           </div>
-    <!--<div class="foto">
-            <label for="name" >
-                <input type="file" name="poster" value="">
-
-            </label>
-          </div>-->
           <input type="submit" value="AGREGAR!">
         </form>
     </div>
   </div>
   </section>
-
+  <script src="/js/actied.js" charset="utf-8"></script>
+  <script src="/js/headuser.js" charset="utf-8"></script>
 
 @endsection

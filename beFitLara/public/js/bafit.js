@@ -31,6 +31,6 @@ window.onload = function(){
         recom[i].className = recom[i].className.replace(" active", "");
     }
     slides[slideIndex-1].style.display = "block";
-    recom[slideIndex-1].className += " active";
+    // recom[slideIndex-1].className += " active";
   }
 }

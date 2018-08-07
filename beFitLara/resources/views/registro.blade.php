@@ -4,7 +4,7 @@
 
 <section class="iniciar">
   <div class="ingresar">
-      <form action='/register' method="post" enctype="multipart/form-data">
+      <form action='/register' method="post" id="regis" enctype="multipart/form-data">
         @csrf
         <p>REGISTRATE EN FIT</p>
         <div class="face">
@@ -14,9 +14,11 @@
         <div class="nombre">
           <label for="">
             <input type="text" id="" name="name" placeholder="*Tu Nombre" value={{ old("name") }}>
+            <div class=""></div>
           </label>
           <label for="">
-        <input type="text" id="" name="apellido" placeholder="*Tu Apellido" value={{ old("apellido") }}>
+            <input type="text" id="" name="apellido" placeholder="*Tu Apellido" value={{ old("apellido") }}>
+            <div class=""></div>
           </label>
         </div>
         <div class="mensajes">
@@ -28,9 +30,11 @@
         <div class="nombre">
           <label for="">
             <input type="text" id="" name="telefono" placeholder="*Un teléfono" value={{ old("telefono") }}>
+            <div class=""></div>
           </label>
           <label for="">
             <input type="text" id="" name="email" placeholder="*Tu Email" value={{ old("email") }}>
+            <div class=""></div>
           </label>
             </div>
         <div class="mensajes">
@@ -42,6 +46,7 @@
         <div class="nombre">
           <label for="">
             <input type="text" id="" name="edad" placeholder="*Edad" value={{ old("edad") }}>
+            <div class=""></div>
           </label>
         </div>
         <div class="mensajes">
@@ -57,6 +62,7 @@
               <option value="{{$barrio->id}}">{{$barrio->barrio}}</option>
             @endforeach
             </select>
+            <div class=""></div>
           </label>
           </div>
           <div class="mensajes">
@@ -75,8 +81,9 @@
             </ul>
           </div>
           <div class="nombre">
-            <input type="password" id="" name="password" placeholder="Contraseña" value="">
-            <input type="password" id="" name="password_confirmation" placeholder="Repetir Contraseña" value="">
+            <input type="password" id="passa" name="password" placeholder="Contraseña" value="">
+            <div class=""></div>
+            <input type="password" id="passb" name="password_confirmation" placeholder="Repetir Contraseña" value="">
           </div>
           <div class="mensa">
             <ul>
@@ -101,4 +108,5 @@
       <p>No te quedes afuera, en 1 simple paso podés ser parte de esta comunidad.</p>
   </div>
 </section>
+  <script src="/js/javava.js" charset="utf-8"></script>
 @endsection

@@ -72,4 +72,5 @@
 
 @section('scripts')
   <script src="/js/bafit.js" charset="utf-8"></script>
+  <script src="/js/headuser.js" charset="utf-8"></script>
 @endsection

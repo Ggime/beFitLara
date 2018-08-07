@@ -4,7 +4,7 @@
 
   <section class="iniciar">
     <div class="ingresar">
-        <form action='/actividades/agregar' method="post" enctype="multipart/form-data">
+        <form action='/actividades/agregar' id="agract" method="post" enctype="multipart/form-data">
           {{ csrf_field() }}
       <!--  @if (count($errors)>0)
           <div class="">
@@ -20,6 +20,7 @@
           <div class="nombre">
             <label for="actividad">
               <input type="text" id="" name="actividad" placeholder="*Actividad" value="{{ old("actividad") }}">
+              <div class=""></div>
             </label>
             <!--<label for="">
               <input type="text" id="" name="responsable" placeholder="*Responsable">
@@ -39,6 +40,7 @@
                   <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
                 @endforeach
                 </select>
+                <div class=""></div>
             </label>
           </div>
           <div class="mensajes">
@@ -54,6 +56,7 @@
                 <option value="{{$barrio->id}}">{{$barrio->barrio}}</option>
               @endforeach
               </select>
+              <div class=""></div>
             </label>
             </div>
             <div class="mensajes">
@@ -63,10 +66,12 @@
             </div>
             <div class="nombre">
             <label for="">
-          <input type="text" id="" name="direccion" placeholder="*Dirección" value="{{ old("direccion") }}">
+              <input type="text" id="" name="direccion" placeholder="*Dirección" value="{{ old("direccion") }}">
+              <div class=""></div>
             </label>
               <label for="">
                 <input type="text" id="" name="dia" placeholder="*Dias de clase" value={{ old("dia") }}>
+                <div class=""></div>
               </label>
             </div>
           <div class="mensajes">
@@ -78,9 +83,11 @@
           <div class="nombre">
             <label for="">
               <input type="text" id="" name="hora" placeholder="*Hora de inicio" value={{ old("hora") }}>
+              <div class=""></div>
             </label>
             <label for="">
               <input type="text" id="" name="duracion" placeholder="*Duración en minutos" value={{ old("duracion") }}>
+              <div class=""></div>
             </label>
           </div>
           <div class="mensajes">
@@ -92,9 +99,11 @@
 
             <label for="">
               <input type="text" id="" name="precio" placeholder="*Precio" value={{ old("precio") }}>
+              <div class=""></div>
             </label>
             <label for="" >
                 <input type="text" id="" name="descripcion" placeholder="*Descripción" value={{ old("descripcion") }}>
+                <div class=""></div>
             </label>
           </div>
           </div>
@@ -104,15 +113,12 @@
                 <li>{{ $errors->has('descripcion')? $errors->first('descripcion') : ''}}</li>
              </ul>
           </div>
-        <!--  <div class="foto">
-            <label for="name" >
-              <input type="file" name="poster" value="">
-            </label>
-          </div>-->
+
           <input type="submit" value="AGREGAR!">
         </form>
     </div>
   </div>
   </section>
-
+  <script src="/js/acti.js" charset="utf-8"></script>
+  <script src="/js/headuser.js" charset="utf-8"></script>
 @endsection

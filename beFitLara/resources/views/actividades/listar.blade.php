@@ -94,5 +94,5 @@
         </table>
 
       </div>
-
+      <script src="/js/headuser.js" charset="utf-8"></script>
 @endsection

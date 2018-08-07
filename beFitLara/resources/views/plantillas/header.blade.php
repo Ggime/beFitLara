@@ -17,6 +17,7 @@
            <a href="/faq" class="fijo">AYUDA</a>
            <a href="/login" class="fijo">INGRESAR</a>
            <a href="/registro" class="movil">REGISTRARSE</a>
+           <a href="">SOMOS <span id="cant"></span> USUARIOS</a>
            <div class="act-contenedor">
              <label class="ul-label" for="ul">ACTIVIDADES+<a href="#" class="actividades"></a></label>
               <input type="checkbox" class="dar-klik" id="ul">
@@ -31,6 +32,7 @@
              @csrf
              &nbsp; <a href="/faq" class="fijo">AYUDA</a>
                <input class="button2" type="submit" value="SALIR">
+               <a href="">SOMOS <span id="cant"></span> USUARIOS</a>
                <div class="act-contenedor">
                 &nbsp; <label class="ul-label" for="ul">ACTIVIDADES+<a href="#" class="actividades"></a></label>
                   <input type="checkbox" class="dar-klik" id="ul">
