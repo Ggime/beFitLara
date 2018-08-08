@@ -58,28 +58,57 @@ window.onload = function () {
 });
 
 function diferentPassword() {
-  console.log(pass, repass)
     if (pass.value != repass.value) {
-      console.log('pass distintos')
         pass.classList.add('is-invalid');
         pass.parentNode.querySelector('div').classList.add('error');
         pass.parentNode.querySelector('div').innerHTML = 'Las password deben coincidir';
         return true;
     } else {
-      console.log('pass iguales')
       pass.classList.remove('is-invalid');
       pass.parentNode.querySelector('div').classList.remove('error');
       pass.parentNode.querySelector('div').innerHTML = '';
       return false;
      }
-};
+	 };
+
+	 telefono.addEventListener('blur', function(){
+		 if(isNaN(telefono.value)){
+			 telefono.classList.add('is-invalid');
+			 telefono.parentNode.querySelector('div').classList.add('error');
+			 telefono.parentNode.querySelector('div').innerHTML = 'El telefono tiene que ser numerico';
+		 } else {
+			 telefono.classList.remove('is-invalid');
+			 telefono.parentNode.querySelector('div').classList.remove('error');
+			 telefono.parentNode.querySelector('div').innerHTML = '';
+		 }
+	 });
+
+		function phonenumber()
+			{
+  		var phoneno = /^\d{10}$/;
+  		if(telefono.value.match(phoneno) ){
+				telefono.classList.remove('is-invalid');
+	      telefono.parentNode.querySelector('div').classList.remove('error');
+	      telefono.parentNode.querySelector('div').innerHTML = '';
+      	return true;
+	        	}
+	      else
+        	{
+					telefono.classList.add('is-invalid');
+		      telefono.parentNode.querySelector('div').classList.add('error');
+		      telefono.parentNode.querySelector('div').innerHTML = 'El numero debe tener 10 digitos';
+        	return false;
+        	}
+			};
+
+
 
 	form.onsubmit = function (ev) {
     ev.preventDefault();
 		if (
 			nombre.value.trim() != '' &&
       apellido.value.trim() != '' &&
-      telefono.value.trim() != '' &&
+      phonenumber() &&
       edad.value.trim() != '' &&
       email.value.trim() != '' &&
       barrio.value.trim() != '' &&

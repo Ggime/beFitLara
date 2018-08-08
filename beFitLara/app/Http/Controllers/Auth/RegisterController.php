@@ -37,25 +37,28 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+      $mensajes = [
+        'name.required' => 'Ingresa tu Nombre',
+        'apellido.required' => 'Ingresa tu Apellido',
+        'telefono.required' => 'Ingresa tu Telefono',
+        'telefono.numeric' => 'Debe ser numerico',
+        'email.required' => 'Ingresa tu Email',
+        'email.unique' => 'El email ya esta regitrado',
+        'edad.required' => 'Ingresa tu Edad',
+        'password.required' => 'Ingresa tu clave',
+      ];
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'apellido' => 'required|string|max:255',
-            'telefono'=> 'required|string|max:255',
+            'telefono'=> 'required|numeric|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'edad' => 'required|string|max:15',
             'barrio_id' => 'nullable',
             'password' => 'required|string|min:6|confirmed',
             //'avatar' => 'nullable|string|max:255',
-        ]);
+        ], $mensajes);
 
-        $mensajes = [
-          'name.required' => 'Ingresa tu Nombre',
-          'apellido.required' => 'Ingresa tu Apellido',
-          'telefono.required' => 'Ingresa tu Telefono',
-          'email.required' => 'Ingresa tu Email',
-          'edad.required' => 'Ingresa tu Edad',
-          'password.required' => 'Ingresa tu clave',
-        ];
+
     }
 
     /**

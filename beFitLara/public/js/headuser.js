@@ -1,4 +1,4 @@
- window.onload = function(){
+window.addEventListener('load', function(){
   fetch('http://localhost:8000/api/cantidadUsuarios')
     .then(function(res){
       return res.json()
@@ -7,4 +7,4 @@
     }).catch(function(err){
       console.error(err)
     })
-}
+});

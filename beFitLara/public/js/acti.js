@@ -1,4 +1,4 @@
-window.onload = function(){
+window.addEventListener('load',  function(){
 
 var form = document.querySelector('#agract');
 
@@ -38,4 +38,4 @@ form.onsubmit = function (ev) {
   }
 };
 
-};
+});
